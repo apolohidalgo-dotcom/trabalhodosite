@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedidos - Baozeira</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#fff8f0;
+}
+
+header{
+    background:#e63946;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.container{
+    max-width:1200px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.titulo{
+    text-align:center;
+    color:#e63946;
+    margin-bottom:40px;
+}
+
+.pedido-box{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+}
+
+.produtos,
+.resumo{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.item:last-child{
+    border-bottom:none;
+}
+
+.quantidade{
+    width:60px;
+    padding:8px;
+}
+
+.total{
+    font-size:1.8rem;
+    font-weight:bold;
+    color:#2e7d32;
+    margin:20px 0;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    border:none;
+    background:#e63946;
+    color:white;
+    padding:15px;
+    border-radius:8px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#c92f3b;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+@media(max-width:900px){
+
+.pedido-box{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🛒 Finalizar Pedido - Baozeira</h1>
+</header>
+
+<div class="container">
+
+    <h2 class="titulo">Seu Pedido</h2>
+
+    <div class="pedido-box">
+
+        <!-- Produtos -->
+        <div class="produtos">
+
+            <h3>Itens do Carrinho</h3>
+
+            <div class="item">
+                <span>🥟 Bao Tradicional</span>
+                <input type="number" value="1" min="1" class="quantidade">
+                <strong>R$ 18,90</strong>
+            </div>
+
+            <div class="item">
+                <span>🍣 Combo Sushi Premium</span>
+                <input type="number" value="1" min="1" class="quantidade">
+                <strong>R$ 48,90</strong>
+            </div>
+
+            <div class="item">
+                <span>🍜 Lámen Especial</span>
+                <input type="number" value="1" min="1" class="quantidade">
+                <strong>R$ 34,90</strong>
+            </div>
+
+        </div>
+
+        <!-- Resumo -->
+        <div class="resumo">
+
+            <h3>Resumo do Pedido</h3>
+
+            <div class="total">
+                Total: R$ 102,70
+            </div>
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Nome Completo"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    placeholder="Telefone"
+                    required
+                >
+
+                <input
+                    type="text"
+                    placeholder="Endereço de Entrega"
+                    required
+                >
+
+                <textarea
+                    placeholder="Observações do pedido"
+                ></textarea>
+
+                <select required>
+                    <option value="">
+                        Forma de Pagamento
+                    </option>
+
+                    <option>PIX</option>
+                    <option>Cartão de Crédito</option>
+                    <option>Cartão de Débito</option>
+                    <option>Dinheiro</option>
+                </select>
+
+                <button type="submit">
+                    Finalizar Pedido 🚀
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <h3>🥟 Baozeira</h3>
+    <p>O sabor do Brasil encontra a Ásia.</p>
+    <p>© 2026 Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>

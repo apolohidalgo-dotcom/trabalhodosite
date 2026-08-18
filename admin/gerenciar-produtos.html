@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerenciamento de Produtos | Baozeira</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --vermelho:#E63946;
+    --vermelho-hover:#C92F3B;
+    --amarelo:#FFD166;
+    --creme:#FFF8F0;
+    --branco:#FFFFFF;
+    --preto:#222222;
+    --cinza:#666;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--creme);
+}
+
+header{
+    background:var(--vermelho);
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:700;
+}
+
+.voltar{
+    background:var(--amarelo);
+    color:var(--preto);
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.container{
+    max-width:1300px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.titulo{
+    color:var(--vermelho);
+    margin-bottom:25px;
+}
+
+.card{
+    background:var(--branco);
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.form-grid .full{
+    grid-column:1 / -1;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+textarea{
+    resize:none;
+    height:120px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border:2px solid var(--amarelo);
+}
+
+.btn{
+    background:var(--vermelho);
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.btn:hover{
+    background:var(--vermelho-hover);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#fff0f1;
+    color:var(--vermelho);
+}
+
+th,td{
+    padding:15px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+}
+
+.produto-img{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.acoes{
+    display:flex;
+    gap:10px;
+}
+
+.editar{
+    background:var(--amarelo);
+    color:var(--preto);
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.excluir{
+    background:var(--vermelho);
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.status{
+    background:#d4edda;
+    color:#155724;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:0.85rem;
+}
+
+@media(max-width:900px){
+
+.form-grid{
+    grid-template-columns:1fr;
+}
+
+table{
+    display:block;
+    overflow-x:auto;
+}
+
+header{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        🥟 Baozeira Admin
+    </div>
+
+    <a href="painel.html" class="voltar">
+        ⬅ Voltar ao Painel
+    </a>
+
+</header>
+
+<div class="container">
+
+    <h1 class="titulo">🍜 Gerenciamento de Produtos</h1>
+
+    <!-- Cadastro -->
+
+    <div class="card">
+
+        <h2>Novo Produto</h2>
+        <br>
+
+        <form>
+
+            <div class="form-grid">
+
+                <input type="text" placeholder="Nome do Produto" required>
+
+                <select required>
+                    <option value="">Categoria</option>
+                    <option>Baos</option>
+                    <option>Sushis</option>
+                    <option>Lámens</option>
+                    <option>Bebidas</option>
+                    <option>Sobremesas</option>
+                </select>
+
+                <input type="number" placeholder="Preço (R$)" step="0.01">
+
+                <input type="number" placeholder="Quantidade em Estoque">
+
+                <input type="file" class="full">
+
+                <textarea class="full" placeholder="Descrição do produto"></textarea>
+
+            </div>
+
+            <br>
+
+            <button class="btn">
+                ➕ Adicionar Produto
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Lista -->
+
+    <div class="card">
+
+        <h2>Produtos Cadastrados</h2>
+
+        <br>
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Imagem</th>
+                <th>Produto</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+
+            <tr>
+                <td>001</td>
+                <td><img src="https://via.placeholder.com/60" class="produto-img"></td>
+                <td>Bao Tradicional</td>
+                <td>Baos</td>
+                <td>R$ 18,90</td>
+                <td>50</td>
+                <td><span class="status">Disponível</span></td>
+                <td class="acoes">
+                    <button class="editar">Editar</button>
+                    <button class="excluir">Excluir</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>002</td>
+                <td><img src="https://via.placeholder.com/60" class="produto-img"></td>
+                <td>Combo Sushi Premium</td>
+                <td>Sushis</td>
+                <td>R$ 48,90</td>
+                <td>25</td>
+                <td><span class="status">Disponível</span></td>
+                <td class="acoes">
+                    <button class="editar">Editar</button>
+                    <button class="excluir">Excluir</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>003</td>
+                <td><img src="https://via.placeholder.com/60" class="produto-img"></td>
+                <td>Lámen Especial</td>
+                <td>Lámens</td>
+                <td>R$ 34,90</td>
+                <td>12</td>
+                <td><span class="status">Disponível</span></td>
+                <td class="acoes">
+                    <button class="editar">Editar</button>
+                    <button class="excluir">Excluir</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

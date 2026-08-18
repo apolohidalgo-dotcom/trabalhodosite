@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Administrativo - Baozeira</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    background:#f5f5f5;
+}
+
+.sidebar{
+    width:250px;
+    min-height:100vh;
+    background:#e63946;
+    color:white;
+    padding:20px;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.logo h2{
+    font-size:2rem;
+}
+
+.menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:10px;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+.main{
+    flex:1;
+    padding:30px;
+}
+
+.topo{
+    margin-bottom:30px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h3{
+    color:#555;
+}
+
+.numero{
+    font-size:2rem;
+    font-weight:bold;
+    color:#e63946;
+    margin-top:10px;
+}
+
+.tabela{
+    margin-top:40px;
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:12px;
+    text-align:left;
+    border-bottom:1px solid #ddd;
+}
+
+th{
+    color:#e63946;
+}
+
+@media(max-width:768px){
+
+body{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:100%;
+    min-height:auto;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>🥟 Baozeira</h2>
+        <p>Admin</p>
+    </div>
+
+    <div class="menu">
+        <a href="painel.html">📊 Painel</a>
+        <a href="gerenciar-produtos.html">🍜 Produtos</a>
+        <a href="gerenciar-promocoes.html">🎉 Promoções</a>
+        <a href="gerenciar-pedidos.html">📦 Pedidos</a>
+        <a href="../index.html">🏠 Voltar ao Site</a>
+    </div>
+
+</div> 
+
+<div class="main">
+
+    <div class="topo">
+        <h1>Painel Administrativo</h1>
+        <p>Bem-vindo ao gerenciamento da Baozeira.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Pedidos Hoje</h3>
+            <div class="numero">58</div>
+        </div>
+
+        <div class="card">
+            <h3>Clientes</h3>
+            <div class="numero">1.240</div>
+        </div>
+
+        <div class="card">
+            <h3>Produtos</h3>
+            <div class="numero">36</div>
+        </div>
+
+        <div class="card">
+            <h3>Faturamento</h3>
+            <div class="numero">R$ 8.950</div>
+        </div>
+
+    </div>
+
+    <div class="tabela">
+
+        <h2>Últimos Pedidos</h2>
+
+        <table>
+
+            <tr>
+                <th>Cliente</th>
+                <th>Pedido</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>Maria Silva</td>
+                <td>Combo Sushi</td>
+                <td>Em preparo</td>
+            </tr>
+
+            <tr>
+                <td>Lucas Costa</td>
+                <td>Lámen Especial</td>
+                <td>Entregue</td>
+            </tr>
+
+            <tr>
+                <td>Ana Souza</td>
+                <td>Bao Tradicional</td>
+                <td>Saiu para entrega</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

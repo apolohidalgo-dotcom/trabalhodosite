@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerenciar Promoções | Baozeira</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --vermelho:#E63946;
+    --vermelho-hover:#C92F3B;
+    --amarelo:#FFD166;
+    --creme:#FFF8F0;
+    --branco:#FFFFFF;
+    --preto:#222222;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--creme);
+}
+
+header{
+    background:var(--vermelho);
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:700;
+}
+
+.voltar{
+    text-decoration:none;
+    background:var(--amarelo);
+    color:var(--preto);
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.container{
+    max-width:1200px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+h1,h2{
+    color:var(--vermelho);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.full{
+    grid-column:1 / -1;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.btn{
+    background:var(--vermelho);
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.btn:hover{
+    background:var(--vermelho-hover);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:15px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+}
+
+th{
+    background:#fff0f1;
+    color:var(--vermelho);
+}
+
+.tag{
+    background:var(--amarelo);
+    padding:5px 12px;
+    border-radius:20px;
+    font-weight:600;
+}
+
+.acoes{
+    display:flex;
+    gap:10px;
+}
+
+.editar{
+    background:var(--amarelo);
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.excluir{
+    background:var(--vermelho);
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.form-grid{
+    grid-template-columns:1fr;
+}
+
+table{
+    display:block;
+    overflow-x:auto;
+}
+
+header{
+    flex-direction:column;
+    gap:15px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        🎉 Baozeira Admin
+    </div>
+
+    <a href="painel.html" class="voltar">
+        ⬅ Voltar ao Painel
+    </a>
+
+</header>
+
+<div class="container">
+
+    <!-- Nova Promoção -->
+
+    <div class="card">
+
+        <h1>Nova Promoção</h1>
+
+        <br>
+
+        <form>
+
+            <div class="form-grid">
+
+                <input
+                    type="text"
+                    placeholder="Nome da Promoção"
+                    required
+                >
+
+                <input
+                    type="text"
+                    placeholder="Cupom de Desconto"
+                >
+
+                <input
+                    type="number"
+                    placeholder="Percentual (%)"
+                    required
+                >
+
+                <input
+                    type="date"
+                    required
+                >
+
+                <textarea
+                    class="full"
+                    placeholder="Descrição da promoção"
+                ></textarea>
+
+            </div>
+
+            <br>
+
+            <button class="btn">
+                ➕ Criar Promoção
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Lista -->
+
+    <div class="card">
+
+        <h2>Promoções Ativas</h2>
+
+        <br>
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Promoção</th>
+                <th>Cupom</th>
+                <th>Desconto</th>
+                <th>Validade</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+
+            <tr>
+                <td>001</td>
+                <td>Primeira Compra</td>
+                <td>BAO15</td>
+                <td>15%</td>
+                <td>31/12/2026</td>
+                <td><span class="tag">Ativa</span></td>
+                <td class="acoes">
+                    <button class="editar">Editar</button>
+                    <button class="excluir">Excluir</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>002</td>
+                <td>Combo Sushi</td>
+                <td>SUSHI30</td>
+                <td>30%</td>
+                <td>20/08/2026</td>
+                <td><span class="tag">Ativa</span></td>
+                <td class="acoes">
+                    <button class="editar">Editar</button>
+                    <button class="excluir">Excluir</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>003</td>
+                <td>Festival Bao</td>
+                <td>BAOFEST</td>
+                <td>20%</td>
+                <td>15/09/2026</td>
+                <td><span class="tag">Ativa</span></td>
+                <td class="acoes">
+                    <button class="editar">Editar</button>
+                    <button class="excluir">Excluir</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

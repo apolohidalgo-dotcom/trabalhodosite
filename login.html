@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Baozeira</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#e63946,#ff7b7b);
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:1000px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.info{
+    background:#e63946;
+    color:white;
+    padding:50px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.info h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.info p{
+    line-height:1.7;
+}
+
+.forms{
+    padding:40px;
+}
+
+.form-box{
+    margin-bottom:40px;
+}
+
+.form-box h2{
+    color:#e63946;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    border:none;
+    background:#e63946;
+    color:white;
+    padding:14px;
+    border-radius:8px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#c92f3b;
+}
+
+.link{
+    text-align:center;
+    margin-top:10px;
+}
+
+.link a{
+    color:#e63946;
+    text-decoration:none;
+}
+
+@media(max-width:850px){
+
+.container{
+    grid-template-columns:1fr;
+}
+
+.info{
+    text-align:center;
+}
+
+.info h1{
+    font-size:2.2rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="info">
+
+        <h1>🥟 Baozeira</h1>
+
+        <p>
+            Bem-vindo ao universo da Baozeira!
+            Faça login para acompanhar seus pedidos,
+            receber promoções exclusivas e aproveitar
+            o melhor da culinária asiática com um toque brasileiro.
+        </p>
+
+    </div>
+
+    <div class="forms">
+
+        <!-- LOGIN -->
+
+        <div class="form-box">
+
+            <h2>🔐 Entrar</h2>
+
+            <form>
+
+                <input
+                    type="email"
+                    placeholder="Seu e-mail"
+                    required
+                >
+
+                <input
+                    type="password"
+                    placeholder="Sua senha"
+                    required
+                >
+
+                <button type="submit">
+                    Entrar
+                </button>
+
+            </form>
+
+            <div class="link">
+                <a href="#">
+                    Esqueceu sua senha?
+                </a>
+            </div>
+
+        </div>
+
+       

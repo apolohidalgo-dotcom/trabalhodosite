@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Depoimentos - Baozeira</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#fff8f0;
+}
+
+header{
+    background:#e63946;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+header h1{
+    font-size:2.2rem;
+}
+
+.banner{
+    background:linear-gradient(135deg,#e63946,#ff7b7b);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.banner h2{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.depoimentos{
+    padding:60px 8%;
+}
+
+.titulo{
+    text-align:center;
+    color:#e63946;
+    font-size:2rem;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.estrelas{
+    font-size:1.3rem;
+    margin-bottom:15px;
+}
+
+.nome{
+    color:#e63946;
+    font-size:1.1rem;
+    font-weight:600;
+    margin-top:15px;
+}
+
+.cargo{
+    color:#888;
+    font-size:0.9rem;
+}
+
+.formulario{
+    margin-top:60px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.formulario h2{
+    text-align:center;
+    color:#e63946;
+    margin-bottom:25px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+textarea{
+    resize:none;
+    height:120px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#e63946;
+    color:white;
+    border-radius:8px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#c92f3b;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>⭐ Depoimentos Baozeira ⭐</h1>
+</header>
+
+<section class="banner">
+    <h2>O que nossos clientes dizem?</h2>
+    <p>
+        A opinião dos nossos clientes é o ingrediente mais importante.
+    </p>
+</section>
+
+<section class="depoimentos">
+
+    <h2 class="titulo">Avaliações dos Clientes</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+
+            <p>
+                Melhor restaurante de comida asiática que já visitei.
+                O Bao de Frango Crocante é simplesmente perfeito!
+            </p>
+
+            <div class="nome">Ana Clara</div>
+            <div class="cargo">Cliente</div>
+        </div>
+
+        <div class="card">
+            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+
+            <p>
+                O ambiente é incrível e os pratos são muito bem servidos.
+                Recomendo o Lámen Especial.
+            </p>
+
+            <div class="nome">Lucas Mendes</div>
+            <div class="cargo">Cliente</div>
+        </div>
+
+        <div class="card">
+            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+
+            <p>
+                Entrega rápida e comida deliciosa. O combo de sushi
+                vale cada centavo.
+            </p>
+
+            <div class="nome">Mariana Souza</div>
+            <div class="cargo">Cliente</div>
+        </div>
+
+        <div class="card">
+            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+
+            <p>
+                Adorei a proposta de misturar sabores brasileiros
+                e asiáticos. Uma experiência única.
+            </p>
+
+            <div class="nome">Pedro Henrique</div>
+            <div class="cargo">Cliente</div>
+        </div>
+
+    </div>
+
+    <div class="formulario">
+
+        <h2>Deixe seu depoimento ✍️</h2>
+
+        <form>
+
+            <input type="text" placeholder="Seu nome" required>
+
+            <input type="email" placeholder="Seu e-mail" required>
+
+            <textarea placeholder="Conte sua experiência..." required></textarea>
+
+            <button type="submit">
+                Enviar Depoimento
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer>
+    <h3>🥟 Baozeira</h3>
+    <p>O sabor do Brasil encontra a Ásia.</p>
+    <p>© 2026 Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
